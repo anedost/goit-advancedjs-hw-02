@@ -81,10 +81,10 @@ function convertMs(ms) {
   const hour = minute * 60;
   const day = hour * 24;
 
-  const days = Math.floor(ms / day);
-  const hours = Math.floor((ms % day) / hour);
-  const minutes = Math.floor(((ms % day) % hour) / minute);
-  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+  const days = Math.floor(ms / day).toString().padStart(2, '0');
+  const hours = Math.floor((ms % day) / hour).toString().padStart(2, '0');
+  const minutes = Math.floor(((ms % day) % hour) / minute).toString().padStart(2, '0');
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second).toString().padStart(2, '0');
 
   return { days, hours, minutes, seconds };
 }
